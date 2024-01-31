@@ -1,7 +1,7 @@
 import './App.css'
 
-import mainCard from './Components/mainCard'
+import MainCard from './components/MainCard'
 
-const App = () => <mainCard />
+const App = () => <MainCard />
 
 export default App
