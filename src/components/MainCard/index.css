@@ -17,11 +17,14 @@
 .second {
   display: flex;
   flex-direction: row;
+  background-color: #5763a5;
+  width: 1400px;
 }
 .blue-back {
-  background-color: #5763a5;
   border-radius: 20px;
   padding: 20px;
+  width: 400px;
+  text-align: center;
 }
 
 .end {
@@ -30,4 +33,22 @@
 
 .white {
   color: white;
+}
+.second_box {
+  background-color: #5763a5;
+  width: 1400px;
+  margin-top: 10px;
+}
+.rowing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.last {
+  margin-left: 1000px;
+}
+.third {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
