@@ -59,7 +59,6 @@ class MainCard extends Component {
   }
 
   toggling = () => {
-    const {tick} = this.state
     this.setState({tick: !tick})
   }
 
