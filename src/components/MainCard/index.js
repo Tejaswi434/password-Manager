@@ -13,7 +13,7 @@ class MainCard extends Component {
     userName: '',
     password: '',
     searching: '',
-    tick: true,
+    tick: false,
   }
 
   web = event => {
@@ -34,29 +34,11 @@ class MainCard extends Component {
     }))
   }
 
-  checkBox = event => {
-    const {theWholeList, website, userName, password} = this.state
-
+  addingData = event => {
+    console.log('data')
     event.preventDefault()
 
-    const newAppointment = {
-      id: uuidv4(),
-      website,
-      userName,
-      password: '*********************',
-    }
-    this.setState(prevState => ({
-      theWholeList: [...prevState.theWholeList, newAppointment],
-      website: '',
-      userName: '',
-      password: '',
-    }))
-  }
-
-  secondcheckBox = event => {
     const {theWholeList, website, userName, password} = this.state
-
-    event.preventDefault()
 
     const newAppointment = {
       id: uuidv4(),
@@ -76,21 +58,13 @@ class MainCard extends Component {
     this.setState({searching: event.target.value})
   }
 
-  checking = () => {
+  toggling = () => {
     const {tick} = this.state
-    console.log({tick})
     this.setState({tick: !tick})
   }
 
   render() {
-    const {
-      theWholeList,
-      website,
-      userName,
-      password,
-      searching,
-      tick,
-    } = this.state
+    const {theWholeList, website, userName, password, searching} = this.state
     const filteredData = theWholeList.filter(every =>
       every.website.toLowerCase().includes(searching.toLowerCase()),
     )
@@ -106,7 +80,7 @@ class MainCard extends Component {
         <div className="second">
           <div className="blue-back">
             <p className="white">Add New Password</p>
-            <form onSubmit={tick ? this.checkBox : this.secondcheckBox}>
+            <form onSubmit={this.addingData}>
               <input
                 type="text"
                 placeholder="Enter Website"

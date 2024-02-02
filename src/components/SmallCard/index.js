@@ -1,8 +1,8 @@
 import './index.css'
 
 const IndividualItem = props => {
-  const {each, avoidDelete} = props
-  const {theWholeList, Website, UserName, Password, id} = each
+  const {each, avoidDelete, checking} = props
+  const {theWholeList, website, username, password, id} = each
 
   const deleting = () => {
     avoidDelete(id)
@@ -11,13 +11,13 @@ const IndividualItem = props => {
     <li className="row">
       <div>
         <p>
-          <span className="round">{Website[0].toUpperCase()}</span>
+          <span className="round">{website[0].toUpperCase()}</span>
         </p>
       </div>
       <div>
-        <p>{Website}</p>
-        <p>{UserName}</p>
-        <p>{Password}</p>
+        <p>{website}</p>
+        <p>{username}</p>
+        <p>{password}</p>
       </div>
       <div>
         <button type="button">
